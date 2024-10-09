@@ -35,6 +35,7 @@ import com.github.tukenuke.tuske.manager.customenchantment.EnchantManager;
 import com.github.tukenuke.tuske.manager.gui.GUIManager;
 import com.github.tukenuke.tuske.nms.NMS;
 import com.github.tukenuke.tuske.util.ReflectionUtils;
+import org.spigotmc.Metrics;
 
 public class TuSKe extends JavaPlugin {
 	private static NMS nms;
@@ -72,10 +73,6 @@ public class TuSKe extends JavaPlugin {
 		Bukkit.getServer().getPluginManager().registerEvents(new OnlineStatusCheck(this), this);
 		// ----------------------------------------------------------
 		// ------- Some stuffs like Metrics, docs and updater -------
-		if (getConfig().getBoolean("use_metrics")) {
-			new Metrics(this);
-			log("Enabling Metrics... Done!");
-		}
 		if (getConfig().getBoolean("updater.check_for_new_update")) {
 			checkUpdate();
 			log("Check for updates enabled. It will check in some seconds.");

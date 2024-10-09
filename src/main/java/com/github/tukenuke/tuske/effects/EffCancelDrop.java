@@ -71,8 +71,8 @@ public class EffCancelDrop extends Effect{
 		} else if (canCancelBreakDrops && e instanceof BlockBreakEvent) {
 			if (cancel <= 1)
 				((BlockBreakEvent) e).setExpToDrop(0);
-			if (cancel != 1)
-				((BlockBreakEvent) e).setDropItems(false);
+//			if (cancel != 1)
+//				((BlockBreakEvent) e).setDropItems(false);
 		}
 	}
 }
