@@ -3,29 +3,22 @@ import org.apache.tools.ant.filters.ReplaceTokens
 apply plugin: 'java'
 
 repositories {
-    jcenter()
     mavenCentral()
     // Spigot
     maven {
         url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
     }
-<<<<<<< Updated upstream
-    //Skript
-    maven {
-        url 'https://raw.githubusercontent.com/bensku/mvn-repo/master'
-=======
     // BungeeCord
     maven {
         url 'https://oss.sonatype.org/content/repositories/snapshots/'
->>>>>>> Stashed changes
     }
     //ViaVersion
     maven {
         url 'https://repo.viaversion.com/'
     }
-    //Some Skript dependencies to avoid issues
+    //Skript
     maven {
-        url 'https://oss.sonatype.org/content/groups/public/'
+        url 'https://repo.skriptlang.org/releases'
     }
     maven {
         url 'https://mvn.yawk.at'
@@ -49,21 +42,12 @@ dependencies {
     //Since it uses NMS/OBC stuffs, it's required to manually add the bukkit jars.
     implementation fileTree(dir: 'dependencies', include: '*.jar')
     //Skript
-<<<<<<< Updated upstream
-    compile 'ch.njol:skript:2.2-dev32'
-=======
     implementation files('C:/Users/user/Documents/GitHub/Skript-fork/build/libs/Skript.jar')
->>>>>>> Stashed changes
     //Generex API. Used to expressions to generate strings from regex
     implementation files('dependencies/Generex.jar')
     //ViaVersion
-<<<<<<< Updated upstream
-    compile 'us.myles:viaversion:1.1.1'
-    configurations.compile.extendsFrom(configurations.compileWithJar)
-=======
     implementation files('dependencies/ViaVersion-5.0.3-downgraded.jar')//( 'com.viaversion:viaversion-api:4.0.0')
     //configurations.compile.extendsFrom(configurations.compileWithJar)
->>>>>>> Stashed changes
 }
 
 //Used to copy the final jar in test server located in at same place

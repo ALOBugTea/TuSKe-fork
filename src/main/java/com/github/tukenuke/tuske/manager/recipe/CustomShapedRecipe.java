@@ -18,9 +18,14 @@ public class CustomShapedRecipe extends ShapedRecipe implements CustomRecipe {
 		setIngredients(items, shapes);
 	}
 	public CustomShapedRecipe(ItemStack r, ItemStack[] items, String key, String...shapes){
-		super(new NamespacedKey(TuSKe.getInstance(), key), r);
+		super(r);
 		setIngredients(items, shapes);
+		//throw new UnsupportedOperationException();
 	}
+//	public CustomShapedRecipe(ItemStack r, ItemStack[] items, String key, String...shapes){
+//		super(new NamespacedKey(TuSKe.getInstance(), key), r);
+//		setIngredients(items, shapes);
+//	}
 	public Map<Character, ItemStack> getIngredientsMap(){
 		return map.size() == 0 ? super.getIngredientMap() : map;
 	}
